@@ -5,14 +5,12 @@ const routeController = require("../route.controller")
 
 router.get("/",(request,response)=>{
     console.log(request.query);
-    response.send("get all")
+    routeController.handleRequest(request, response, UserController.getAll)
 })
 
 router.get('/:id',(request,response) => {
-    console.log(request.params);
-    const params = request.params
-    const userId = params.id
-    response.send("get by id")
+    console.log("get bt id route" +request.params);
+    routeController.handleRequest(request, response, UserController.getById)
   });
   
   router.delete('/:id',(request,response) => {
@@ -27,6 +25,13 @@ router.get('/:id',(request,response) => {
     const params = request.params
     const userId = params.id
     response.send("patch by id")
+  });
+
+   router.put('/:id',(request,response) => {
+    console.log(request.params);
+    const params = request.params
+    const userId = params.id
+    response.send("put by id")
   });
   
   router.post('/',(request,response) => {
