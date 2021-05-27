@@ -1,4 +1,6 @@
 const userRepository = require("../repositories/userRepository")
+const error = require("../common/error")
+const exceptions = require("../common/exceptions")
 
 const create = async ({username,password}) => {
     console.log("create - username["+ username+"]");
@@ -23,6 +25,9 @@ const getById = async (userId) =>{
     console.log("get by id - userId["+ userId+"]");
     const user = await userRepository.getById(userId);
     console.log("get user service "+user)
+    if(!user){
+        throw new error.AppError(exceptions.exceptionType.users.notFound)
+    }
     return user;
 }
 

@@ -22,7 +22,7 @@ const get = async () => {
 
 const getById = async (userId) => {
     console.log("get repository id "+ userId)
-    const userRet = users.find((u)=>u.id===userId);
+    const userRet = users.find((u)=>u.id==userId);
     console.log("user ret: " +userRet)
     return userRet;
 } 

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router({ mergeParams: true })
 const UserController = require("../controllers/user.controller")
-const routeController = require("../route.controller")
+const routeController = require("../common/route.controller")
 
 router.get("/",(request,response)=>{
     console.log(request.query);
