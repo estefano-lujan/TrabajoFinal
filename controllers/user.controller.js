@@ -20,12 +20,12 @@ const getById = async (req,res) => {
 
 const createUser = async (req,res) => {
     const data = req.body
-    console.log("INIT CREATE USER  data:" + data)
-    if(!data.username){
-        console.log("no name in  CREATE USER  data:" + data)
+    console.log("INIT CREATE USER  data:" + JSON.stringify(data))
+    if(!data.userName){
+        console.log("no name in  CREATE USER  data:" + JSON.stringify(data))
         return res.status(400).json()
     } 
-    const newUser = await userService.create(data);
+    const newUser = await userService.createUser(data);
     console.log(JSON.stringify(newUser))
     return res.status(201).json(newUser)
 }

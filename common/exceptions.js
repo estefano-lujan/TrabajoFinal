@@ -27,6 +27,15 @@ const exceptionType = {
             httpStatus: 404
         },
     },
+    database: {
+        entity: {
+            canNotBeCreated:{
+                code: 400,
+                message: "Can not be create entity",
+                httpStatus: 500
+            }
+        }
+    }
 }
 
 module.exports = {
