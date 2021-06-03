@@ -21,7 +21,7 @@ const errorHandler = (res, ex) =>{
             ex = new AppError(exceptionType.notFound)
         }else{
             //unhandled excetion 
-            ex = AppError(exceptionType.unhandledException,ex.message)
+            ex = new AppError(exceptionType.unhandledException,ex.message)
         }
     }
     const status = ex.httpStatus

@@ -15,5 +15,9 @@ module.exports = {
     db: process.env.MYSQL_DB_ENV,
     username: process.env.MYSQL_USER_ENV,
     password: process.env.MYSQL_PASS_ENV
+  },
+  auth:{
+    secret:process.env.SECRET_KEY,
+    tokenExpire: 86400
   }
 }

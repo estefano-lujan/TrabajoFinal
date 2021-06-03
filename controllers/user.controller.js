@@ -30,8 +30,15 @@ const createUser = async (req,res) => {
     return res.status(201).json(newUser)
 }
 
+const login = async (req, res) => {
+    const userInfo = await userService.login(req.body.userName, req.body.password)
+    res.json(userInfo)
+  }
+  
+
 module.exports = {
     createUser,
     getAll,
-    getById
+    getById,
+    login
 }
