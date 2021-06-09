@@ -1,6 +1,6 @@
 FROM node:14-alpine3.10 As development
 
-WORKDIR /usr/src/app
+WORKDIR /
 
 COPY package*.json ./
 
@@ -14,7 +14,7 @@ FROM node:14-alpine3.10 as production
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-WORKDIR /usr/src/app
+WORKDIR /
 
 COPY package*.json ./
 
@@ -22,6 +22,6 @@ RUN npm install --only=production
 
 COPY . .
 
-COPY --from=development /usr/src/app/dist ./dist
+COPY --from=development /dist ./dist
 
 CMD ["node", "dist/main"]

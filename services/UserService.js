@@ -54,7 +54,8 @@ const getById = async (userId) =>{
     return user;
 }
 
-const login = async (userName, password) => {
+const login = async ({userName, password}) => {
+  console.log("login - userName["+ userName+"]"+ " - password["+ password+"]" );
   const user = await UserModel.findOne({where: {userName:userName.toLowerCase()}})
   const isMatch = user && (await comparePass(password,user.password))
   if(!isMatch){

@@ -31,7 +31,9 @@ const createUser = async (req,res) => {
 }
 
 const login = async (req, res) => {
-    const userInfo = await userService.login(req.body.userName, req.body.password)
+    const data = req.body
+    console.log("login - data:" + JSON.stringify(data))
+    const userInfo = await userService.login(data)
     res.json(userInfo)
   }
   
