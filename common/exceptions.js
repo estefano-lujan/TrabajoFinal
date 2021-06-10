@@ -9,6 +9,13 @@ const exceptionType = {
         message: "Not found",
         httpStatus: 404
     },
+    paises:{
+        notFound: {
+            code: 1000,
+            message: "Pais no se encuentra",
+            httpStatus: 404
+        },
+        },
     // code of users 100
     users : {
         invalidPassword: {

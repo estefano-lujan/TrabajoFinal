@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use(apiPrefix + "/users",require("./routes/user.route"))
+app.use(apiPrefix + "/paises",require("./routes/pais.route"))
 app.use(apiPrefix + "/login",require("./routes/login.route"))
 
 // add router in the Express app.
