@@ -1,8 +1,5 @@
 const Sequelize = require('sequelize')
 const config = require('config')
-//const logger = require('../../config/server/logger')(__filename)
-
-// Review created_at / updated_at issue: https://github.com/sequelize/sequelize/issues/918
 const sequelizeConnection = new Sequelize(
   config.get('mysql.db'),
   config.get('mysql.username'),

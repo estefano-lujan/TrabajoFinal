@@ -15,6 +15,11 @@ const PaisModel = sequelizeConnection.define(
       allowNull: false,
       field: 'nombre'
     },
+      poblacion: {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+      field: 'poblacion'
+    },
   },
   {
     tableName: 'paises',
