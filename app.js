@@ -18,6 +18,9 @@ app.use(apiPrefix + "/users",require("./routes/user.route"))
 app.use(apiPrefix + "/paises",require("./routes/pais.route"))
 app.use(apiPrefix + "/login",require("./routes/login.route"))
 
+app.use(apiPrefix + "/productos",require("./routes/productos.route"))
+
+
 // add router in the Express app.
 app.use("/", router);
 
