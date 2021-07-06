@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.use(apiPrefix + "/users",require("./routes/user.route"))
 app.use(apiPrefix + "/paises",require("./routes/pais.route"))
-app.use(apiPrefix + "/login",require("./routes/login.route"))
+app.use(apiPrefix + "/seguridad",require("./routes/seguridad.route"))
 
 app.use(apiPrefix + "/productos",require("./routes/productos.route"))
 

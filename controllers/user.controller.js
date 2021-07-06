@@ -1,4 +1,6 @@
 const userService = require("../services/UserService")
+const error = require('../common/error')
+const exceptions = require('../common/exceptions')
 
 const getAll = async (req,res) => {
     const query = req.query
@@ -23,7 +25,11 @@ const createUser = async (req,res) => {
     console.log("INIT CREATE USER  data:" + JSON.stringify(data))
     if(!data.userName){
         console.log("no name in  CREATE USER  data:" + JSON.stringify(data))
-        return res.status(400).json()
+        throw new error.AppError(exceptions.exceptionType.badRequest)
+    } 
+    if(!data.password){
+        console.log("no pass in  CREATE USER  data:" + JSON.stringify(data))
+        throw new error.AppError(exceptions.exceptionType.badRequest)
     } 
     const newUser = await userService.createUser(data);
     console.log(JSON.stringify(newUser))

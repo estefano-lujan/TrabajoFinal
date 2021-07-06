@@ -9,6 +9,14 @@ const exceptionType = {
         message: "Not found",
         httpStatus: 404
     },
+    badRequest:{
+        code: 400,
+        message: "Bad Request",
+        httpStatus: 400
+    },
+    invalidToken:
+    { code: 501, 
+        message: 'Invalid token'},
     paises:{
         notFound: {
             code: 1000,
@@ -33,7 +41,7 @@ const exceptionType = {
     users : {
         invalidPassword: {
             code: 100,
-            message: "Password did not match",
+            message: "Credenciales incorrectas",
             httpStatus: 401
         },
         cannotCreateUser: {
@@ -45,6 +53,11 @@ const exceptionType = {
             code: 102,
             message: "User not found",
             httpStatus: 404
+        },
+        userExists: {
+            code: 103,
+            message: "El usuario ya se encuentra registrado",
+            httpStatus: 400
         },
     },
     database: {

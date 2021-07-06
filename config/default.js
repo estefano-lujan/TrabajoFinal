@@ -18,6 +18,6 @@ module.exports = {
   },
   auth:{
     secret:process.env.SECRET_KEY,
-    tokenExpire: 86400
+    tokenExpire: process.env.EXPIRE_TOKEN
   }
 }

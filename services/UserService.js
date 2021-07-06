@@ -11,6 +11,12 @@ const config = require("config")
 const createUser = async ({userName, password}) => {
     // logger.info(`createUser - userName[${userName}]`)
     console.log("createUser - userName["+ userName+"]");
+
+const userExist = await UserModel.findOne({where: {userName:userName.toLowerCase()}});
+if(userExist){
+  throw new error.AppError(exceptions.exceptionType.users.userExists);
+}
+
     const data = {
       userName:userName.toLowerCase(),
       password:encryptPassword(password),
@@ -68,7 +74,8 @@ const login = async ({userName, password}) => {
 const generateToken = (id,userName)=>{
  return jwt.sign({
    id:id,
-   userName:userName
+   userName:userName,
+   rol:"ADMIN"
  },config.get("auth.secret"),{
    expiresIn: config.get("auth.tokenExpire")
  })

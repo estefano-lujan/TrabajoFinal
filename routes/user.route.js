@@ -15,33 +15,5 @@ router.get('/:id',[auth.required],(request,response) => {
     routeController.handleRequest(request, response, UserController.getById)
   });
   
-  router.delete('/:id',(request,response) => {
-    console.log(request.params);
-    const params = request.params
-    const userId = params.id
-    response.send("delete by id")
-  });
-  
-  router.patch('/:id',(request,response) => {
-    console.log(request.params);
-    const params = request.params
-    const userId = params.id
-    response.send("patch by id")
-  });
-
-   router.put('/:id',(request,response) => {
-    console.log(request.params);
-    const params = request.params
-    const userId = params.id
-    response.send("put by id")
-  });
-  
-  router.post('/',(request,response) => {
-    routeController.handleRequest(request, response, UserController.createUser)
-  });
-
-  router.get('/prueba',(request,response) => {
-    response.send("prueba")
-  });
 
 module.exports = router
