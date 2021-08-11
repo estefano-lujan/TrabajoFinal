@@ -1,4 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="formulario.component.css">
 <nav routerLink="formulario" class="nav-link"></nav>
 <h1>Completa este formulario y postulate</h1>
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
@@ -35,6 +36,12 @@
     <label>Adjunta tu Curriculuma Vitae</label>
     <input type="file" class="form-control" formControlName="Archivo" >
     </div>
-    <input type="submit" value="enviar">
+
+
+    <div class="form-group">
+        <label>Observaciones</label>
+        <textarea type="text" class="form-control" formControlName="Observaciones" maxlength="150"></textarea>
+        </div>
+    <input type="submit" value="enviar" class="Boton">
     <router-outlet> </router-outlet>
     </form>

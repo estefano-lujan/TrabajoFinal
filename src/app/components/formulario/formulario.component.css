@@ -1,0 +1,14 @@
+h1 {
+    color: darkslategray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+* {
+    background-color: azure;
+}
+input {
+    color:  darkslategray;
+}
+.boton {
+background-color: darkslategray;
+color: white
+}
