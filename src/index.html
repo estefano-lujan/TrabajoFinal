@@ -3,11 +3,20 @@
 <head>
   <meta charset="utf-8">
   <title>PortalDeEmpleo</title>
+  <script>
+    function redirigir() {
+      alert("Registrado correctamente") ;
+      window.location. href="formulario.component.html" ;
+    }
+  </script>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <button onclick="redirigir()" [disabled]="miFormulario.invalid" class="btn
+  btn-primary" type="submit" style="position: fixed;">Enviar</button>
+
   <app-root></app-root>
 </body>
 </html>

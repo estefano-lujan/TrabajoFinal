@@ -5,14 +5,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule} from '@angular/forms'
 import { FormularioComponent } from
 './components/formulario/formulario.component';
-import { ListaComponent } from './components/lista/lista.component';
+
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule ({
 declarations: [
 AppComponent,
 FormularioComponent,
-ListaComponent
 ],
 imports: [
 BrowserModule,
